@@ -857,7 +857,7 @@
         document.getElementById("output").innerHTML = "Now playing " + playlist[i]["Song"] + "by " + playlist[i]["Artist"] + '. ';
         document.getElementById("prev").innerHTML = "Last song " + playlist[i - 1]["Song"] + "by " + playlist[i - 1]["Artist"];
         var seconds = Math.round((nexttime / 1000) % 60);
-		if(seconds<10){seconds=0+seconds};
+		if(seconds<10){seconds="0"+seconds};
         var mins = Math.round((nexttime / 1000) / 60);
         document.getElementById("next").innerHTML = mins + ":" + seconds + " to next song " + playlist[i + 1]["Song"] + "by " + playlist[i + 1]["Artist"];
 
