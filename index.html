@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+
+    html {
+        display: table;
+        margin: auto;
+        color: white;
+        background: black;
+    }
+    body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8">
+    <title>Playlist</title>
+  </head>
+
+  <body>
+    <p id="prev"></p>
+    <p id="output"></p>
+    <p id="next"></p>
+    <p id="togo"></p>
+    <script>
+      var playlist = [{
+        "Artist": "Cheap Trick ",
+        "Song": "Hello There ",
+        "timestamp": "00:00:00"
+      }, {
+        "Artist": "Elton John ",
+        "Song": "The Bitch Is Back ",
+        "timestamp": "00:02:06"
+      }, {
+        "Artist": "Ozzy Osbourne ",
+        "Song": "Crazy Train ",
+        "timestamp": "00:05:51"
+      }, {
+        "Artist": "Oasis ",
+        "Song": "Wonderwall ",
+        "timestamp": "00:12:08"
+      }, {
+        "Artist": "Foreigner ",
+        "Song": "Feels Like the First Time ",
+        "timestamp": "00:16:56"
+      }, {
+        "Artist": "Them Crooked Vultures ",
+        "Song": "Dead End Friends ",
+        "timestamp": "00:20:32"
+      }, {
+        "Artist": "Machine Head ",
+        "Song": "Aesthetics of Hate ",
+        "timestamp": "00:24:10"
+      }, {
+        "Artist": "The Clash ",
+        "Song": "Rudie Can't Fail ",
+        "timestamp": "00:30:44"
+      }, {
+        "Artist": "Alanis Morrissette ",
+        "Song": "You Oughta Know ",
+        "timestamp": "00:34:54"
+      }, {
+        "Artist": "Willie Nelson ",
+        "Song": "On the Road Again ",
+        "timestamp": "00:39:21"
+      }, {
+        "Artist": "Lynyrd Skynyrd ",
+        "Song": "That Smell ",
+        "timestamp": "00:42:15"
+      }, {
+        "Artist": "Sum 41 ",
+        "Song": "Fat Lip ",
+        "timestamp": "00:48:21"
+      }, {
+        "Artist": "Kula Shaker ",
+        "Song": "Hey Dude ",
+        "timestamp": "00:51:50"
+      }, {
+        "Artist": "Aerosmith ",
+        "Song": "Love in an Elevator ",
+        "timestamp": "00:56:16"
+      }, {
+        "Artist": "Weezer ",
+        "Song": "El Scorcho ",
+        "timestamp": "01:01:56"
+      }, {
+        "Artist": "Van Halen ",
+        "Song": "Unchained ",
+        "timestamp": "01:06:26"
+      }, {
+        "Artist": "The Pretty Reckless ",
+        "Song": "Follow Me Down ",
+        "timestamp": "01:10:20"
+      }, {
+        "Artist": "Otis Redding ",
+        "Song": "Love Man ",
+        "timestamp": "01:16:09"
+      }, {
+        "Artist": "Devo ",
+        "Song": "Uncontrollable Urge ",
+        "timestamp": "01:19:05"
+      }, {
+        "Artist": "Rilo Kiley ",
+        "Song": "Portions for Foxes ",
+        "timestamp": "01:22:29"
+      }, {
+        "Artist": "The Guess Who ",
+        "Song": "American Woman ",
+        "timestamp": "01:27:35"
+      }, {
+        "Artist": "Megadeth ",
+        "Song": "Peace Sells ",
+        "timestamp": "01:31:49"
+      }, {
+        "Artist": "The Pretenders ",
+        "Song": "Precious ",
+        "timestamp": "01:36:16"
+      }, {
+        "Artist": "The Jam ",
+        "Song": "Town Called Malice ",
+        "timestamp": "01:40:12"
+      }, {
+        "Artist": "Phish ",
+        "Song": "Wilson ",
+        "timestamp": "01:43:25"
+      }, {
+        "Artist": "Bad Religion ",
+        "Song": "21st Century Digital Boy ",
+        "timestamp": "01:47:49"
+      }, {
+        "Artist": "Iron Maiden ",
+        "Song": "Run to the Hills ",
+        "timestamp": "01:50:56"
+      }, {
+        "Artist": "Avenged Sevenfold ",
+        "Song": "Beast and the Harlot ",
+        "timestamp": "01:58:51"
+      }, {
+        "Artist": "Loverboy ",
+        "Song": "Everybody's Working for the Weekend ",
+        "timestamp": "02:05:36"
+      }, {
+        "Artist": "Steely Dan ",
+        "Song": "Black Friday ",
+        "timestamp": "02:09:02"
+      }, {
+        "Artist": "EELS ",
+        "Song": "Saturday Morning ",
+        "timestamp": "02:13:46"
+      }, {
+        "Artist": "U2 ",
+        "Song": "Sunday Bloody Sunday ",
+        "timestamp": "02:17:01"
+      }, {
+        "Artist": "The Cranberries ",
+        "Song": "Zombie ",
+        "timestamp": "02:22:04"
+      }, {
+        "Artist": "Thin Lizzy ",
+        "Song": "Jailbreak ",
+        "timestamp": "02:27:33"
+      }, {
+        "Artist": "Johnny Cash ",
+        "Song": "Folsom Prison Blues ",
+        "timestamp": "02:32:28"
+      }, {
+        "Artist": "The Hives ",
+        "Song": "Die All Right! ",
+        "timestamp": "02:35:29"
+      }, {
+        "Artist": "Killswitch Engage ",
+        "Song": "My Curse ",
+        "timestamp": "02:38:40"
+      }, {
+        "Artist": "Bob Marley ",
+        "Song": "I Shot the Sheriff ",
+        "timestamp": "02:43:44"
+      }, {
+        "Artist": "That Handsome Devil ",
+        "Song": "Rob the Prez-O-Dent ",
+        "timestamp": "02:48:38"
+      }, {
+        "Artist": "The Grateful Dead ",
+        "Song": "Casey Jones ",
+        "timestamp": "02:51:51"
+      }, {
+        "Artist": "Big Country ",
+        "Song": "In a Big Country ",
+        "timestamp": "02:56:35"
+      }, {
+        "Artist": "Heart ",
+        "Song": "Kick It Out ",
+        "timestamp": "03:01:22"
+      }, {
+        "Artist": "Foo Fighters ",
+        "Song": "DOA ",
+        "timestamp": "03:04:26"
+      }, {
+        "Artist": "The Haunted ",
+        "Song": "D.O.A. ",
+        "timestamp": "03:09:06"
+      }, {
+        "Artist": "Fall Out Boy ",
+        "Song": "Dead on Arrival ",
+        "timestamp": "03:13:42"
+      }, {
+        "Artist": "Freezepop ",
+        "Song": "Brainpower ",
+        "timestamp": "03:17:21"
+      }, {
+        "Artist": "Eve 6 ",
+        "Song": "Inside Out ",
+        "timestamp": "03:19:36"
+      }, {
+        "Artist": "Black Rebel Motorcycle Club ",
+        "Song": "Weapon of Choice ",
+        "timestamp": "03:23:29"
+      }, {
+        "Artist": "Scandal ",
+        "Song": "The Warrior ",
+        "timestamp": "03:26:40"
+      }, {
+        "Artist": "White Zombie ",
+        "Song": "Super-Charger Heaven ",
+        "timestamp": "03:31:03"
+      }, {
+        "Artist": "Toto ",
+        "Song": "Africa ",
+        "timestamp": "03:34:52"
+      }, {
+        "Artist": "Tenacious D ",
+        "Song": "Tribute ",
+        "timestamp": "03:40:07"
+      }, {
+        "Artist": "Silversun Pickups ",
+        "Song": "Panic Switch ",
+        "timestamp": "03:44:30"
+      }, {
+        "Artist": "Against Me! ",
+        "Song": "Thrash Unreal ",
+        "timestamp": "03:50:28"
+      }, {
+        "Artist": "Deep Purple ",
+        "Song": "Highway Star ",
+        "timestamp": "04:04:04"
+      }, {
+        "Artist": "The Both ",
+        "Song": "Milwaukee ",
+        "timestamp": "04:10:22"
+      }, {
+        "Artist": "Paul McCartney ",
+        "Song": "Jet ",
+        "timestamp": "04:15:30"
+      }, {
+        "Artist": "Jet ",
+        "Song": "Are You Gonna Be My Girl ",
+        "timestamp": "04:20:09"
+      }, {
+        "Artist": "Between the Buried and Me ",
+        "Song": "The Coma Machine ",
+        "timestamp": "04:23:57"
+      }, {
+        "Artist": "AFI ",
+        "Song": "Girl's Not Grey ",
+        "timestamp": "04:31:49"
+      }, {
+        "Artist": "Electric Six ",
+        "Song": "Gay Bar ",
+        "timestamp": "04:35:21"
+      }, {
+        "Artist": "Sublime ",
+        "Song": "Santeria ",
+        "timestamp": "04:37:58"
+      }, {
+        "Artist": "Eville ",
+        "Song": "Thrasher ",
+        "timestamp": "04:41:25"
+      }, {
+        "Artist": "Toadies ",
+        "Song": "Possum Kingdom ",
+        "timestamp": "04:44:48"
+      }, {
+        "Artist": "Stevie Ray Vaughan ",
+        "Song": "Rude Mood ",
+        "timestamp": "04:50:05"
+      }, {
+        "Artist": "Stevie Nicks ",
+        "Song": "Stop Draggin' My Heart Around ",
+        "timestamp": "04:55:01"
+      }, {
+        "Artist": "Stevie Wonder ",
+        "Song": "Sir Duke ",
+        "timestamp": "04:59:56"
+      }, {
+        "Artist": "Buzzcocks ",
+        "Song": "Ever Fallen in Love ",
+        "timestamp": "05:04:07"
+      }, {
+        "Artist": "Smashing Pumpkins ",
+        "Song": "Siva ",
+        "timestamp": "05:07:16"
+      }, {
+        "Artist": "Slayer ",
+        "Song": "South of Heaven ",
+        "timestamp": "05:11:53"
+      }, {
+        "Artist": "Billy Joel ",
+        "Song": "The Entertainer ",
+        "timestamp": "05:16:55"
+      }, {
+        "Artist": "Kaleo ",
+        "Song": "Glass House ",
+        "timestamp": "05:20:52"
+      }, {
+        "Artist": "The Offspring ",
+        "Song": "The Kids Aren't Alright ",
+        "timestamp": "05:25:27"
+      }, {
+        "Artist": "Motorhead ",
+        "Song": "(We Are) the Road Crew",
+        "timestamp": "05:28:42"
+      }, {
+        "Artist": "Bikini Kill ",
+        "Song": "Rebel Girl ",
+        "timestamp": "05:31:38"
+      }, {
+        "Artist": "The Doors ",
+        "Song": "Break On Through to the Other Side ",
+        "timestamp": "05:34:28"
+      }, {
+        "Artist": "The Subways ",
+        "Song": "Oh Yeah ",
+        "timestamp": "05:37:14"
+      }, {
+        "Artist": "Stone Temple Pilots ",
+        "Song": "Vasoline ",
+        "timestamp": "5:40:31"
+      }, {
+        "Artist": "Pat Benatar ",
+        "Song": "Invincible ",
+        "timestamp": "05:43:54"
+      }, {
+        "Artist": "David Bowie ",
+        "Song": "Young Americans ",
+        "timestamp": "05:48:34"
+      }, {
+        "Artist": "Judas Priest ",
+        "Song": "Painkiller ",
+        "timestamp": "05:54:38"
+      }, {
+        "Artist": "Bryan Adams ",
+        "Song": "Summer of '69 ",
+        "timestamp": "06:18:53"
+      }, {
+        "Artist": "Metallica ",
+        "Song": "Ride the Lightning ",
+        "timestamp": "06:23:10"
+      }, {
+        "Artist": "B",
+        "Song": "52's Rock Lobster ",
+        "timestamp": "06:30:10"
+      }, {
+        "Artist": "Pixies ",
+        "Song": "Wave of Mutilation ",
+        "timestamp": "06:35:27"
+      }, {
+        "Artist": "Rancid ",
+        "Song": "Time Bomb ",
+        "timestamp": "06:37:53"
+      }, {
+        "Artist": "The Killers ",
+        "Song": "Somebody Told Me ",
+        "timestamp": "06:40:43"
+      }, {
+        "Artist": "James Brown ",
+        "Song": "I Got You (I Feel Good) ",
+        "timestamp": "06:44:21"
+      }, {
+        "Artist": "Papa Roach ",
+        "Song": "Last Resort ",
+        "timestamp": "06:47:39"
+      }, {
+        "Artist": "Snoop Dogg ",
+        "Song": "Drop It Like It's Hot ",
+        "timestamp": "06:51:27"
+      }, {
+        "Artist": "System of a Down ",
+        "Song": "Toxicity ",
+        "timestamp": "06:56:01"
+      }, {
+        "Artist": "Coheed and Cambria ",
+        "Song": "A Favor House Atlantic ",
+        "timestamp": "07:00:09"
+      }, {
+        "Artist": "Blondie ",
+        "Song": "Call Me ",
+        "timestamp": "07:04:00"
+      }, {
+        "Artist": "Red Hot Chili Peppers ",
+        "Song": "Breaking the Girl ",
+        "timestamp": "07:09:17"
+      }, {
+        "Artist": "Royal Blood ",
+        "Song": "Figure It Out ",
+        "timestamp": "07:13:35"
+      }, {
+        "Artist": "X ",
+        "Song": "I Must Not Think Bad Thoughts ",
+        "timestamp": "07:16:59"
+      }, {
+        "Artist": "Alice in Chains ",
+        "Song": "No Excuses ",
+        "timestamp": "07:22:10"
+      }, {
+        "Artist": "Fleetwood Mac ",
+        "Song": "Go Your Own Way ",
+        "timestamp": "07:27:48"
+      }, {
+        "Artist": "Deftones ",
+        "Song": "My Own Summer (Shove It) ",
+        "timestamp": "07:32:22"
+      }, {
+        "Artist": "Green Day ",
+        "Song": "Brain Stew/Jaded ",
+        "timestamp": "07:35:19"
+      }, {
+        "Artist": "Nirvana ",
+        "Song": "Stay Away ",
+        "timestamp": "07:40:41"
+      }, {
+        "Artist": "Mighty Mighty Bosstones ",
+        "Song": "Where'd You Go? ",
+        "timestamp": "07:44:15"
+      }, {
+        "Artist": "Worshipper ",
+        "Song": "Black Corridor ",
+        "timestamp": "07:48:19"
+      }, {
+        "Artist": "Whitney Houston ",
+        "Song": "I Wanna Dance With Somebody ",
+        "timestamp": "07:52:50"
+      }, {
+        "Artist": "Spacehog ",
+        "Song": "In the Meantime ",
+        "timestamp": "07:57:58"
+      }, {
+        "Artist": "Blue Oyster Cult ",
+        "Song": "Godzilla ",
+        "timestamp": "08:03:20"
+      }, {
+        "Artist": "Warren Zevon ",
+        "Song": "Werewolves of London ",
+        "timestamp": "08:07:16"
+      }, {
+        "Artist": "Edgar Winter Group ",
+        "Song": "Frankenstein ",
+        "timestamp": "08:11:19"
+      }, {
+        "Artist": "Journey ",
+        "Song": "Don't Stop Believing ",
+        "timestamp": "08:25:38"
+      }, {
+        "Artist": "Iggy Pop ",
+        "Song": "Lust for Life (feat. Abby) ",
+        "timestamp": "08:30:30"
+      }, {
+        "Artist": "Old 97's ",
+        "Song": "Time Bomb (feat. Abby) ",
+        "timestamp": "08:36:11"
+      }, {
+        "Artist": "Jefferson Starship (feat. Abby) ",
+        "Song": "Jane ",
+        "timestamp": "08:40:15"
+      }, {
+        "Artist": "Average White Band ",
+        "Song": "Pick Up the Pieces (feat. Abby) ",
+        "timestamp": "08:45:57"
+      }, {
+        "Artist": "The Rolling Stones ",
+        "Song": "Gimme Shelter (feat. Abby) ",
+        "timestamp": "08:50:21"
+      }, {
+        "Artist": "Modern English ",
+        "Song": "I Melt With You (feat. Abby) ",
+        "timestamp": "08:55:19"
+      }, {
+        "Artist": "Go Go's ",
+        "Song": "We Got the Beat (feat. Abby) ",
+        "timestamp": "08:59:53"
+      }, {
+        "Artist": "Goo Goo Dolls ",
+        "Song": "Iris (feat. Abby) ",
+        "timestamp": "09:03:02"
+      }, {
+        "Artist": "WAR ",
+        "Song": "Low Rider (feat. Abby) ",
+        "timestamp": "09:08:16"
+      }, {
+        "Artist": "Isley Brothers ",
+        "Song": "Shout (feat. Abby) ",
+        "timestamp": "09:11:49"
+      }, {
+        "Artist": "Anvil ",
+        "Song": "Metal on Metal (feat. Abby) ",
+        "timestamp": "09:16:27"
+      }, {
+        "Artist": "No Doubt ",
+        "Song": "New (feat. Abby) ",
+        "timestamp": "09:20:58"
+      }, {
+        "Artist": "Harvey Danger ",
+        "Song": "Flagpole Sitta (feat. Abby) ",
+        "timestamp": "09:25:58"
+      }, {
+        "Artist": "Talking Heads ",
+        "Song": "Burning Down the House (feat. Abby) ",
+        "timestamp": "09:29:46"
+      }, {
+        "Artist": "Simple Minds ",
+        "Song": "Don't You Forget About Me (feat. Abby) ",
+        "timestamp": "09:34:58"
+      }, {
+        "Artist": "Oingo Boingo ",
+        "Song": "Weird Science (feat. Abby) ",
+        "timestamp": "09:39:33"
+      }, {
+        "Artist": "Ramones ",
+        "Song": "Rock 'n Roll High School (feat. Abby) ",
+        "timestamp": "09:46:34"
+      }, {
+        "Artist": "Huey Lewis & The News ",
+        "Song": "The Power of Love ",
+        "timestamp": "09:49:29"
+      }, {
+        "Artist": "Nine Inch Nails ",
+        "Song": "The Perfect Drug ",
+        "timestamp": "09:59:22"
+      }, {
+        "Artist": "Kool and the Gang ",
+        "Song": "Jungle Boogie ",
+        "timestamp": "10:04:57"
+      }, {
+        "Artist": "Kenny Loggins ",
+        "Song": "Danger Zone ",
+        "timestamp": "10:09:20"
+      }, {
+        "Artist": "Kenny Rogers ",
+        "Song": "The Gambler ",
+        "timestamp": "10:11:53"
+      }, {
+        "Artist": "Pearl Jam ",
+        "Song": "State of Love and Trust ",
+        "timestamp": "10:15:55"
+      }, {
+        "Artist": "Night Ranger ",
+        "Song": "Sister Christian ",
+        "timestamp": "10:20:35"
+      }, {
+        "Artist": "Rick Springfield ",
+        "Song": "Jessie's Girl ",
+        "timestamp": "10:25:55"
+      }, {
+        "Artist": "Yes ",
+        "Song": "Roundabout ",
+        "timestamp": "10:29:23"
+      }, {
+        "Artist": "Motley Crue ",
+        "Song": "Kickstart My Heart ",
+        "timestamp": "10:45:47"
+      }, {
+        "Artist": "Mastodon ",
+        "Song": "High Road ",
+        "timestamp": "10:50:47"
+      }, {
+        "Artist": "Tegan and Sara ",
+        "Song": "The Con ",
+        "timestamp": "10:55:16"
+      }, {
+        "Artist": "The Replacements ",
+        "Song": "Kids Don't Follow ",
+        "timestamp": "10:59:10"
+      }, {
+        "Artist": "Rage Against the Machine ",
+        "Song": "Killing in the Name Of ",
+        "timestamp": "11:01:56"
+      }, {
+        "Artist": "Jimi Hendrix Experience ",
+        "Song": "All Along the Watchtower ",
+        "timestamp": "11:07:44"
+      }, {
+        "Artist": "Alien Ant Farm ",
+        "Song": "Smooth Criminal ",
+        "timestamp": "11:12:18"
+      }, {
+        "Artist": "Social Distortion ",
+        "Song": "Ring of Fire ",
+        "timestamp": "11:16:11"
+      }, {
+        "Artist": "Ram Jam ",
+        "Song": "Black Betty ",
+        "timestamp": "11:20:16"
+      }, {
+        "Artist": "Save Ferris ",
+        "Song": "Come On Eileen ",
+        "timestamp": "11:24:44"
+      }, {
+        "Artist": "Janis Joplin ",
+        "Song": "Piece of My Heart ",
+        "timestamp": "11:29:43"
+      }, {
+        "Artist": "Cake ",
+        "Song": "I Will Survive ",
+        "timestamp": "11:33:23"
+      }, {
+        "Artist": "Reba McEntire ",
+        "Song": "Fancy ",
+        "timestamp": "11:38:52"
+      }, {
+        "Artist": "Korn ",
+        "Song": "Word Up! ",
+        "timestamp": "11:43:56"
+      }, {
+        "Artist": "Soul Remnants ",
+        "Song": "Dead Black (Heart of Ice) ",
+        "timestamp": "11:46:56"
+      }, {
+        "Artist": "Carly Rae Jepsen ",
+        "Song": "Call Me Maybe (feat. Pat) ",
+        "timestamp": "11:56:26"
+      }, {
+        "Artist": "All",
+        "Song": "American Rejects ",
+        "timestamp": "Move Along (feat. Pat) ",
+        "null": ["11:59:58"]
+      }, {
+        "Artist": "Dead Kennedys ",
+        "Song": "Holiday In Cambodia (feat. Pat) ",
+        "timestamp": "12:04:22"
+      }, {
+        "Artist": "Squeeze ",
+        "Song": "Cool for Cats (feat. Pat) ",
+        "timestamp": "12:08:35"
+      }, {
+        "Artist": "Queen ",
+        "Song": "Stone Cold Crazy (feat. Pat) ",
+        "timestamp": "12:12:16"
+      }, {
+        "Artist": "Jane's Addiction ",
+        "Song": "Been Caught Stealin' (feat. Pat) ",
+        "timestamp": "12:14:57"
+      }, {
+        "Artist": "Montell Jordan ",
+        "Song": "This Is How We Do It (feat. Pat) ",
+        "timestamp": "12:18:41"
+      }, {
+        "Artist": "Lamb of God ",
+        "Song": "Laid to Rest ",
+        "timestamp": "12:22:32"
+      }, {
+        "Artist": "Credence Clearwater Revival ",
+        "Song": "Travelin' Band ",
+        "timestamp": "12:26:34"
+      }, {
+        "Artist": "Rise Against ",
+        "Song": "Savior ",
+        "timestamp": "12:28:58"
+      }, {
+        "Artist": "Soundgarden ",
+        "Song": "Jesus Christ Pose (feat. Pat) ",
+        "timestamp": "12:33:23"
+      }, {
+        "Artist": "Linkin Park ",
+        "Song": "In the End (feat. Pat) ",
+        "timestamp": "12:39:38"
+      }, {
+        "Artist": "Sonic Youth ",
+        "Song": "Teen Age Riot ",
+        "timestamp": "12:58:26"
+      }, {
+        "Artist": "Tom Petty & The Heartbreakers ",
+        "Song": "Refugee ",
+        "timestamp": "13:05:53"
+      }, {
+        "Artist": "Live ",
+        "Song": "I Alone ",
+        "timestamp": "13:11:52"
+      }, {
+        "Artist": "Blink 182 ",
+        "Song": "The Rock Show ",
+        "timestamp": "13:16:05"
+      }, {
+        "Artist": "The Outfield ",
+        "Song": "Your Love ",
+        "timestamp": "13:19:20"
+      }, {
+        "Artist": "Spoon ",
+        "Song": "Trouble Comes Running ",
+        "timestamp": "13:23:14"
+      }, {
+        "Artist": "Chicago ",
+        "Song": "25 or 6 to 4 ",
+        "timestamp": "13:26:47"
+      }, {
+        "Artist": "Marilyn Manson ",
+        "Song": "The Beautiful People ",
+        "timestamp": "13:32:03"
+      }, {
+        "Artist": "Queens of the Stone Age ",
+        "Song": "My God Is the Sun ",
+        "timestamp": "13:36:36"
+      }, {
+        "Artist": "Wolfmother ",
+        "Song": "New Moon Rising ",
+        "timestamp": "13:40:35"
+      }, {
+        "Artist": "The Protomen ",
+        "Song": "Light Up the Night ",
+        "timestamp": "13:45:18"
+      }, {
+        "Artist": "Paramore ",
+        "Song": "Crushcrushcrush (feat. Abby) ",
+        "timestamp": "13:49:46"
+      }, {
+        "Artist": "Faith No More ",
+        "Song": "Midlife Crisis (feat. Abby) ",
+        "timestamp": "13:53:08"
+      }, {
+        "Artist": "DC Talk ",
+        "Song": "Jesus Freak (feat. Abby) ",
+        "timestamp": "13:58:00"
+      }, {
+        "Artist": "Ministry ",
+        "Song": "Jesus Built My Hotrod (feat. Abby) ",
+        "timestamp": "14:03:09"
+      }, {
+        "Artist": "Merle Haggard ",
+        "Song": "Mama Tried (feat. Abby) ",
+        "timestamp": "14:08:23"
+      }, {
+        "Artist": "INXS ",
+        "Song": "What You Need (feat. Abby) ",
+        "timestamp": "14:11:10"
+      }, {
+        "Artist": "Ben Harper ",
+        "Song": "Shimmer and Shine (feat. Abby) ",
+        "timestamp": "14:15:13"
+      }, {
+        "Artist": "The Who ",
+        "Song": "I Can See for Miles (feat. Abby) ",
+        "timestamp": "14:19:01"
+      }, {
+        "Artist": "Underoath ",
+        "Song": "Desperate Times",
+        "timestamp": "Desperate Measures (feat. Abby) ",
+        "null": ["14:23:58"]
+      }, {
+        "Artist": "The Damned ",
+        "Song": "Smash It Up (feat. Abby) ",
+        "timestamp": "14:28:05"
+      }, {
+        "Artist": "Interpol ",
+        "Song": "PDA (feat. Abby) ",
+        "timestamp": "14:31:15"
+      }, {
+        "Artist": "The Police ",
+        "Song": "Truth Hits Everybody (feat. Abby) ",
+        "timestamp": "14:36:35"
+      }, {
+        "Artist": "The Cure ",
+        "Song": "Lovesong (feat. Abby) ",
+        "timestamp": "14:39:47"
+      }, {
+        "Artist": "Phoenix ",
+        "Song": "Lasso (feat. Abby) ",
+        "timestamp": "14:43:36"
+      }, {
+        "Artist": "Dream Theater ",
+        "Song": "Pull Me Under (feat. Abby) ",
+        "timestamp": "14:46:42"
+      }, {
+        "Artist": "Wilson Phillips ",
+        "Song": "Hold On (feat. Abby) ",
+        "timestamp": "14:55:21"
+      }, {
+        "Artist": "St. Vincent ",
+        "Song": "Birth In Reverse (feat. Abby) ",
+        "timestamp": "15:10:40"
+      }, {
+        "Artist": "Boston ",
+        "Song": "Foreplay/Longtime ",
+        "timestamp": "15:16:38"
+      }, {
+        "Artist": "Blur ",
+        "Song": "Song 2 ",
+        "timestamp": "15:25:10"
+      }, {
+        "Artist": "Steve Miller Band ",
+        "Song": "Take the Money and Run ",
+        "timestamp": "15:27:31"
+      }, {
+        "Artist": "Slipknot ",
+        "Song": "Left Behind ",
+        "timestamp": "15:30:43"
+      }, {
+        "Artist": "Styx ",
+        "Song": "Blue Collar Man ",
+        "timestamp": "15:35:10"
+      }, {
+        "Artist": "Dio ",
+        "Song": "Holy Diver ",
+        "timestamp": "15:39:37"
+      }, {
+        "Artist": "My Chemical Romance ",
+        "Song": "Helena ",
+        "timestamp": "15:44:54"
+      }, {
+        "Artist": "Siouxsie and the Banshees ",
+        "Song": "Cities in Dust ",
+        "timestamp": "15:48:34"
+      }, {
+        "Artist": "Mission of Burma ",
+        "Song": "That's How I Escaped My Certain Fate ",
+        "timestamp": "15:52:46"
+      }, {
+        "Artist": "R.E.M. ",
+        "Song": "It's the End of the World As We Know It ",
+        "timestamp": "15:55:09"
+      }, {
+        "Artist": "Rush ",
+        "Song": "2112 ",
+        "timestamp": "15:59:30"
+      }];
+
+      function updateTicker() {
+        var now = new Date();
+        var end = Date.UTC(2018, 2, 22, 8, 30, 50);
+        var time_left = end - now;
+        var runtime = new Date('1970-01-01T' + "16:22:05" + 'Z');
+        var timeString = playlist[0]["timestamp"];
+        var datetime = new Date('1970-01-01T' + timeString + 'Z');
+        var current_time = runtime - time_left;
+        var i;
+        for (i = 0; i < playlist.length; i++) {
+          timeString = playlist[i]["timestamp"];
+          datetime = new Date('1970-01-01T' + timeString + 'Z');
+          if (datetime > current_time) {
+            break;
+          }
+        }
+        i--;
+        var nexttime = datetime - current_time;
+        j = playlist.length - i;
+        document.getElementById("output").innerHTML = "Now playing " + playlist[i]["Song"] + "by " + playlist[i]["Artist"] + '. ';
+        document.getElementById("prev").innerHTML = "Last song " + playlist[i - 1]["Song"] + "by " + playlist[i - 1]["Artist"];
+        var seconds = Math.round((nexttime / 1000) % 60);
+        var mins = Math.round((nexttime / 1000) / 60);
+        document.getElementById("next").innerHTML = mins + ":" + seconds + " to next song " + playlist[i + 1]["Song"] + "by " + playlist[i + 1]["Artist"];
+
+        document.getElementById("togo").innerHTML = j + ' songs to go.';
+      }
+      setInterval(updateTicker, 1000);
+
+    </script>
+  </body>
+
+</html>
