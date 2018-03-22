@@ -857,8 +857,7 @@
         var seconds = Math.round((nexttime / 1000) % 60);
 		if(seconds<10){seconds="0"+seconds};
         var mins = Math.round((nexttime / 1000) / 60);
-        document.getElementById("next").innerHTML = mins + ":" + seconds + " to next song <b>" + playlist[i + 1]["Song"] + "</b>by <b>" + playlist[i + 1]["Artist"]+"</b>.;
-
+        document.getElementById("next").innerHTML = mins + ":" + seconds + " to next song <b>" + playlist[i + 1]["Song"] + "</b>by <b>" + playlist[i + 1]["Artist"]+"</b>.";
         document.getElementById("togo").innerHTML = j + ' songs to go.';
       }
       setInterval(updateTicker, 1000);
