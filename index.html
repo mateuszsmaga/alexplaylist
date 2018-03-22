@@ -852,12 +852,12 @@
         i--;
         var nexttime = datetime - current_time;
         j = playlist.length - i;
-        document.getElementById("output").innerHTML = "Now playing " + playlist[i]["Song"] + "by " + playlist[i]["Artist"] + '. ';
-        document.getElementById("prev").innerHTML = "Last song " + playlist[i - 1]["Song"] + "by " + playlist[i - 1]["Artist"];
+        document.getElementById("output").innerHTML = "Now playing <b>" + playlist[i]["Song"] + "</b>by <b>" + playlist[i]["Artist"] + "</b>.";
+        document.getElementById("prev").innerHTML = "Last song <b>" + playlist[i - 1]["Song"] + "</b>by <b>" + playlist[i - 1]["Artist"] + "</b>.";
         var seconds = Math.round((nexttime / 1000) % 60);
 		if(seconds<10){seconds="0"+seconds};
         var mins = Math.round((nexttime / 1000) / 60);
-        document.getElementById("next").innerHTML = mins + ":" + seconds + " to next song " + playlist[i + 1]["Song"] + "by " + playlist[i + 1]["Artist"];
+        document.getElementById("next").innerHTML = mins + ":" + seconds + " to next song <b>" + playlist[i + 1]["Song"] + "</b>by <b>" + playlist[i + 1]["Artist"]+"</b>.;
 
         document.getElementById("togo").innerHTML = j + ' songs to go.';
       }
